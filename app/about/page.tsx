@@ -8,7 +8,7 @@ import { LEGAL_NAME, MARKETS, PANZO_URL } from "@/components/site";
 export const metadata: Metadata = {
   title: "About | Stonesyz",
   description:
-    "Stonesyz is the parent company of Panzo, the operations platform for interior and fit-out firms in India, the UAE and Singapore.",
+    "Stonesyz is the parent company of Panzo. We build software for interiors, construction and infrastructure, starting with Panzo for interior and fit-out firms.",
   alternates: { canonical: "/about" },
 };
 
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const values = [
   {
     title: "Built for the trade, not for demos",
-    body: "Every feature comes from how interior projects actually run: messy, fast-moving and relationship-driven. We started in India, and we're bringing Panzo to firms in the UAE and Singapore too.",
+    body: "Every feature comes from how projects actually run on site: messy, fast-moving and relationship-driven. We started in India, and we're bringing Panzo to firms in the UAE and Singapore too.",
   },
   {
     title: "Calm over clever",
@@ -73,13 +73,13 @@ export default function AboutPage() {
             </Reveal>
             <Reveal delay={80}>
               <h1 className="mt-6 font-display text-5xl font-bold leading-[0.98] tracking-tight sm:text-7xl">
-                The operating system for interior <span className="text-fire">businesses</span><span className="-ml-[0.06em] text-sun">.</span>
+                Software for the <span className="text-fire">built world</span><span className="-ml-[0.06em] text-sun">.</span>
               </h1>
             </Reveal>
             <Reveal delay={160}>
               <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink-700">
-                {LEGAL_NAME} is the parent company of Panzo. We exist so the way interior firms run their
-                business can finally match the quality of the spaces they create.
+                {LEGAL_NAME} is the parent company of Panzo. We build for interiors, construction and
+                infrastructure, so the way these firms run their business can match the quality of what they build.
               </p>
             </Reveal>
           </div>
@@ -97,9 +97,9 @@ export default function AboutPage() {
         <div className="space-y-6 text-lg leading-relaxed text-ink-700">
           <Reveal>
             <p>
-              Interior businesses are some of the most demanding to run. Every project is custom, timelines
-              shift, dozens of materials and vendors move at once, and the client is living through it in real
-              time. Yet most of this is still managed on WhatsApp, Excel and memory.
+              The businesses that build are some of the most demanding to run. Every project is custom,
+              timelines shift, dozens of materials and vendors move at once, and the client is watching it happen
+              in real time. Yet most of this is still managed on WhatsApp, Excel and memory.
             </p>
           </Reveal>
           <Reveal delay={80}>
@@ -111,8 +111,8 @@ export default function AboutPage() {
           </Reveal>
           <Reveal delay={160}>
             <p className="border-l-4 border-sun pl-5 font-medium text-ink-900">
-              Our mission: run the operations behind interior businesses, from the first enquiry to service, so
-              owners and their teams spend their time on the work only they can do.
+              Our mission: run the operations behind the businesses that build, from the first enquiry to
+              handover and service, so owners and their teams spend their time on the work only they can do.
             </p>
           </Reveal>
         </div>
@@ -141,10 +141,10 @@ export default function AboutPage() {
       <section className={`${wrap} py-20 sm:py-28`}>
         <Reveal>
           <h2 className="max-w-3xl font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
-            Founders didn&apos;t start their studios to chase payments and dig through folders.
+            Builders didn&apos;t start their firms to chase payments and dig through folders.
           </h2>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-700">
-            They started them to create spaces people fall in love with. Somewhere between the site visits, the
+            They started them to build things people are proud of. Somewhere between the site visits, the
             revisions and the endless follow-ups, the business started running them. We hand that control back.
           </p>
         </Reveal>
@@ -170,14 +170,13 @@ export default function AboutPage() {
                 becomes a project, and a project becomes a <span className="text-sun">client for life.</span>&rdquo;
               </blockquote>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-on-maroon/80">
-                We&apos;re a small team, shipping every week, working closely with the interior studios and
-                fit-out firms we build for.
+                We&apos;re a small team, shipping every week, working closely with the firms we build for.
               </p>
               <figcaption className="mt-8 flex items-center gap-3">
                 <StonesMark className="h-10 w-10" />
                 <span>
                   <span className="block font-semibold">The Stonesyz Team</span>
-                  <span className="block text-sm text-on-maroon/70">Building calmer interior businesses</span>
+                  <span className="block text-sm text-on-maroon/70">Calmer systems for the built world</span>
                 </span>
               </figcaption>
             </figure>
@@ -188,11 +187,12 @@ export default function AboutPage() {
       <section className={`${wrap} py-20 sm:py-28`}>
         <Reveal>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Where we&apos;re going</p>
-          <h2 className="mt-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">We&apos;re starting with interiors.</h2>
+          <h2 className="mt-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">We started with interiors. We won&apos;t stop there.</h2>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-700">
-            Our vision: every interior and fit-out firm, starting in {MARKETS.join(", ").replace(/, (?=[^,]*$)/, " and ")},
-            runs on one calm system. Panzo is built as a platform, not a one-off tool, to grow with the firms
-            that adopt it.
+            Interiors, construction and infrastructure share the same problems: many teams, many vendors, money
+            moving at every stage and sites far from the office. Our vision is that the firms that build, starting
+            in {MARKETS.join(", ").replace(/, (?=[^,]*$)/, " and ")}, run on calm, connected systems. Panzo,
+            built for interiors, is the first of them, built as a platform rather than a one-off tool.
           </p>
         </Reveal>
         <div className="mt-12 grid gap-6 sm:grid-cols-3">

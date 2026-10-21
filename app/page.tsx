@@ -37,8 +37,9 @@ export default function Home() {
             </Reveal>
             <Reveal delay={160}>
               <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink-700">
-                {LEGAL_NAME} builds software for interior and fit-out businesses. Our first product,
-                Panzo, runs sales, projects, site work and people, from the first enquiry to the final handover.
+                {LEGAL_NAME} builds software for the businesses that build: interiors, construction and
+                infrastructure. Our first product, Panzo, runs interior and fit-out firms from the first enquiry
+                to the final handover.
               </p>
             </Reveal>
             <Reveal delay={240}>
@@ -64,14 +65,14 @@ export default function Home() {
         <Reveal>
           <SectionLabel n="01">Who we are</SectionLabel>
           <h2 className="mt-5 font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
-            A company built for the people who build interiors.
+            Software for the people who build.
           </h2>
         </Reveal>
         <Reveal delay={100}>
           <p className="text-lg leading-relaxed text-ink-700">
-            Interior businesses juggle designers, site engineers, crews, vendors and clients, usually across
-            spreadsheets and chat groups. Stonesyz exists to give them one place to work, built around how
-            projects really run on site.
+            Interior studios, contractors and infrastructure teams all juggle engineers, designers, crews,
+            vendors and clients, usually across spreadsheets and chat groups. Stonesyz exists to give the
+            built world one place to work, built around how projects really run on site.
           </p>
           <p className="mt-8 text-xs font-semibold uppercase tracking-[0.2em] text-muted">Where we work</p>
           <ul className="mt-4 flex flex-wrap gap-3">
@@ -90,10 +91,11 @@ export default function Home() {
           <Reveal>
             <SectionLabel n="02">What we make</SectionLabel>
             <h2 className="mt-5 max-w-3xl font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
-              Panzo: one platform, three ways in.
+              We started with interiors: Panzo.
             </h2>
             <p className="mt-4 max-w-2xl text-lg text-ink-700">
-              One login and one set of records, shared by the office, the site and HR.{" "}
+              Panzo runs interior and fit-out firms on one login and one set of records, shared by the office,
+              the site and HR.{" "}
               <a href={PANZO_URL} className="font-semibold text-accent underline-offset-4 hover:underline">thepanzo.com</a>
             </p>
           </Reveal>

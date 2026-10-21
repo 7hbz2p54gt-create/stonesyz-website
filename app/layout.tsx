@@ -19,7 +19,7 @@ const jakarta = localFont({
   display: "swap",
 });
 
-const description = `${LEGAL_NAME} is the parent company of Panzo, software that runs interior and fit-out businesses in India, the UAE and Singapore.`;
+const description = `${LEGAL_NAME} is the parent company of Panzo. We build software for interiors, construction and infrastructure in India, the UAE and Singapore.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
