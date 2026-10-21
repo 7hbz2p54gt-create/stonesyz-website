@@ -72,8 +72,8 @@ export default function AboutPage() {
               </span>
             </Reveal>
             <Reveal delay={80}>
-              <h1 className="mt-6 font-display text-5xl font-extrabold leading-[0.98] tracking-tight sm:text-7xl">
-                The operating system for interior <span className="text-fire">businesses.</span>
+              <h1 className="mt-6 font-display text-5xl font-bold leading-[0.98] tracking-tight sm:text-7xl">
+                The operating system for interior <span className="text-fire">businesses</span><span className="-ml-[0.06em] text-sun">.</span>
               </h1>
             </Reveal>
             <Reveal delay={160}>
@@ -129,7 +129,7 @@ export default function AboutPage() {
           <ol className="mt-12 divide-y-2 divide-line border-y-2 border-line">
             {values.map((v, i) => (
               <Reveal as="li" key={v.title} delay={i * 60} className="grid gap-4 py-8 sm:grid-cols-[6rem_1fr_1.4fr] sm:items-baseline">
-                <span className="font-display text-5xl font-extrabold outline-num">{String(i + 1).padStart(2, "0")}</span>
+                <span className="font-display text-5xl font-bold outline-num">{String(i + 1).padStart(2, "0")}</span>
                 <h3 className="font-display text-2xl font-bold">{v.title}</h3>
                 <p className="leading-relaxed text-ink-700">{v.body}</p>
               </Reveal>
@@ -152,7 +152,7 @@ export default function AboutPage() {
           {pillars.map((p, i) => (
             <Reveal key={p.word} delay={i * 100} className="h-full">
               <div className={`btn h-full rounded-[2rem] p-8 ${PILLAR_STYLES[i]}`}>
-                <p className="font-display text-4xl font-extrabold tracking-tight">{p.word}</p>
+                <p className="font-display text-4xl font-bold tracking-tight">{p.word}</p>
                 <p className="mt-3 leading-relaxed opacity-90">{p.line}</p>
               </div>
             </Reveal>

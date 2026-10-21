@@ -31,8 +31,8 @@ export default function Home() {
               </span>
             </Reveal>
             <Reveal delay={80}>
-              <h1 className="mt-6 font-display text-5xl font-extrabold leading-[0.98] tracking-tight sm:text-7xl">
-                Building the systems behind the <span className="text-fire">spaces.</span>
+              <h1 className="mt-6 font-display text-5xl font-bold leading-[0.98] tracking-tight sm:text-7xl">
+                Building the systems behind the <span className="text-fire">spaces</span><span className="-ml-[0.06em] text-sun">.</span>
               </h1>
             </Reveal>
             <Reveal delay={160}>

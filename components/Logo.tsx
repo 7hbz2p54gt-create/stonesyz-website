@@ -14,7 +14,7 @@ export default function Logo() {
   return (
     <span className="inline-flex items-center gap-2">
       <StonesMark className="h-7 w-7" />
-      <span className="font-display text-xl font-extrabold tracking-tight">stonesyz</span>
+      <span className="font-display text-xl font-bold tracking-tight">stonesyz</span>
     </span>
   );
 }

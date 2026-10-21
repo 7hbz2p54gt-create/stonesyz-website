@@ -11,7 +11,7 @@ npm run lint && npx tsc --noEmit && npm test && npm run build
 ```
 
 - Shared facts (legal name, email, products, markets, nav): `components/site.ts`.
-- Identity: warm red / ember / saffron on cream with maroon bands, Bricolage Grotesque + DM Sans, stacked-stones mark (`components/Logo.tsx`). Deliberately different from Panzo (crimson + Poppins). Tokens and motion in `app/globals.css` (light + dark; motion off under reduced motion).
+- Identity: warm red / ember / saffron on cream with maroon bands, Plus Jakarta Sans, stacked-stones mark (`components/Logo.tsx`). Deliberately different from Panzo (crimson + Poppins). Tokens and motion in `app/globals.css` (light + dark; motion off under reduced motion).
 - Product screenshots in `public/product/` are the demo-data images already public on thepanzo.com.
 
 ## Contact form

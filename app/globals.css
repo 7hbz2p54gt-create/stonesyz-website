@@ -28,8 +28,8 @@
   --color-maroon-2: #6b1416;
   --color-on-maroon: #fff1e2;
 
-  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-bricolage), var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -133,6 +133,10 @@ body {
   transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s, color 0.15s, border-color 0.15s;
 }
 .btn:hover { transform: translateY(-2px); }
+
+.font-display {
+  letter-spacing: -0.02em;
+}
 
 .outline-num {
   -webkit-text-stroke: 1.5px var(--color-accent);

@@ -5,24 +5,16 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { LEGAL_NAME, SITE_URL } from "@/components/site";
 
-// Bricolage Grotesque for headlines, DM Sans for text (SIL OFL, licences in
-// app/fonts). Self-hosted, and deliberately not Panzo's Poppins.
-const bricolage = localFont({
-  variable: "--font-bricolage",
+// Plus Jakarta Sans for headlines and text (SIL OFL, licence in app/fonts).
+// Self-hosted, and deliberately not Panzo's Poppins.
+const jakarta = localFont({
+  variable: "--font-jakarta",
   src: [
-    { path: "./fonts/bricolage-grotesque-latin-600-normal.woff2", weight: "600", style: "normal" },
-    { path: "./fonts/bricolage-grotesque-latin-700-normal.woff2", weight: "700", style: "normal" },
-    { path: "./fonts/bricolage-grotesque-latin-800-normal.woff2", weight: "800", style: "normal" },
-  ],
-  display: "swap",
-});
-
-const dmSans = localFont({
-  variable: "--font-dm-sans",
-  src: [
-    { path: "./fonts/dm-sans-latin-400-normal.woff2", weight: "400", style: "normal" },
-    { path: "./fonts/dm-sans-latin-500-normal.woff2", weight: "500", style: "normal" },
-    { path: "./fonts/dm-sans-latin-600-normal.woff2", weight: "600", style: "normal" },
+    { path: "./fonts/plus-jakarta-sans-latin-400-normal.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/plus-jakarta-sans-latin-500-normal.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/plus-jakarta-sans-latin-600-normal.woff2", weight: "600", style: "normal" },
+    { path: "./fonts/plus-jakarta-sans-latin-700-normal.woff2", weight: "700", style: "normal" },
+    { path: "./fonts/plus-jakarta-sans-latin-800-normal.woff2", weight: "800", style: "normal" },
   ],
   display: "swap",
 });
@@ -45,7 +37,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${bricolage.variable} ${dmSans.variable}`}>
+    <html lang="en" className={jakarta.variable}>
       <head>
         {/* Without JavaScript the scroll reveal never runs: show everything. */}
         <noscript>

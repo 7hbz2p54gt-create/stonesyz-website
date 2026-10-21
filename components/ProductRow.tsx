@@ -12,7 +12,7 @@ export default function ProductRow({ p, index }: { p: Product; index: number }) 
   return (
     <div className="product-row grid items-center gap-8 md:grid-cols-2 md:gap-14">
       <div className={flip ? "md:order-2" : ""}>
-        <p className="font-display text-6xl font-extrabold outline-num">{String(index + 1).padStart(2, "0")}</p>
+        <p className="font-display text-6xl font-bold outline-num">{String(index + 1).padStart(2, "0")}</p>
         <p className="mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-accent">{p.tag}</p>
         <h3 className="mt-2 font-display text-3xl font-bold tracking-tight sm:text-4xl">{p.name}</h3>
         <p className="mt-4 max-w-md text-lg leading-relaxed text-ink-700">{p.body}</p>
