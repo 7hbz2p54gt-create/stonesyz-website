@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+/**
+ * Theme tokens. `ink-*`, `canvas`, `surface`, `line` and `muted` flip in dark
+ * mode below, so components never need `dark:` variants. The accent is the
+ * Panzo crimson, used sparingly, so the parent and the product read as family.
+ */
+@theme {
+  --color-ink-900: #14181e;
+  --color-ink-700: #323f4b;
+  --color-muted: #52606d;
+  --color-line: #e4e7eb;
+  --color-canvas: #ffffff;
+  --color-surface: #f5f7fa;
+  --color-accent: #b3202a;
+  --color-accent-hover: #931a22;
+  --color-accent-on: #ffffff;
+  --color-accent-soft: #fbf0f1;
+
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-ink-900: #f5f7fa;
+    --color-ink-700: #cbd2d9;
+    --color-muted: #9aa5b1;
+    --color-line: #2a333d;
+    --color-canvas: #0f1318;
+    --color-surface: #171c23;
+    --color-accent: #f0848b;
+    --color-accent-hover: #f6a9ae;
+    --color-accent-on: #14181e;
+    --color-accent-soft: #2a1a1c;
+  }
+}
+
+html {
+  color-scheme: light dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink-900);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
