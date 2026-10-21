@@ -5,13 +5,24 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { LEGAL_NAME, SITE_URL } from "@/components/site";
 
-// Poppins, self-hosted (SIL OFL, licence in app/fonts), same as thepanzo.com.
-const poppins = localFont({
-  variable: "--font-poppins",
+// Bricolage Grotesque for headlines, DM Sans for text (SIL OFL, licences in
+// app/fonts). Self-hosted, and deliberately not Panzo's Poppins.
+const bricolage = localFont({
+  variable: "--font-bricolage",
   src: [
-    { path: "./fonts/poppins-latin-400-normal.woff2", weight: "400", style: "normal" },
-    { path: "./fonts/poppins-latin-500-normal.woff2", weight: "500", style: "normal" },
-    { path: "./fonts/poppins-latin-600-normal.woff2", weight: "600", style: "normal" },
+    { path: "./fonts/bricolage-grotesque-latin-600-normal.woff2", weight: "600", style: "normal" },
+    { path: "./fonts/bricolage-grotesque-latin-700-normal.woff2", weight: "700", style: "normal" },
+    { path: "./fonts/bricolage-grotesque-latin-800-normal.woff2", weight: "800", style: "normal" },
+  ],
+  display: "swap",
+});
+
+const dmSans = localFont({
+  variable: "--font-dm-sans",
+  src: [
+    { path: "./fonts/dm-sans-latin-400-normal.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/dm-sans-latin-500-normal.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/dm-sans-latin-600-normal.woff2", weight: "600", style: "normal" },
   ],
   display: "swap",
 });
@@ -34,7 +45,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={poppins.variable}>
+    <html lang="en" className={`${bricolage.variable} ${dmSans.variable}`}>
       <head>
         {/* Without JavaScript the scroll reveal never runs: show everything. */}
         <noscript>

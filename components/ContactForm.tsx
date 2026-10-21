@@ -6,22 +6,22 @@ import { CONTACT_MAX } from "@/lib/contactInput";
 import { PANZO_URL } from "./site";
 
 const field =
-  "mt-1.5 w-full rounded-lg border border-line bg-canvas px-3.5 py-2.5 text-ink-900 placeholder:text-muted transition-colors focus:border-accent focus:outline-none";
+  "mt-1.5 w-full rounded-xl border-2 border-line bg-canvas px-3.5 py-2.5 text-ink-900 placeholder:text-muted transition-colors focus:border-accent focus:outline-none";
 
 export default function ContactForm() {
   const [state, action, pending] = useActionState<ContactState, FormData>(sendContact, { status: "idle" });
 
   if (state.status === "ok") {
     return (
-      <div role="status" className="rounded-2xl border border-line bg-canvas p-8">
-        <p className="text-xl font-semibold">Thank you, your message is on its way.</p>
+      <div role="status" className="rounded-3xl bg-canvas p-8 text-ink-900">
+        <p className="font-display text-2xl font-bold">Thank you, your message is on its way.</p>
         <p className="mt-2 text-ink-700">We&apos;ll reply to the email address you gave us.</p>
       </div>
     );
   }
 
   return (
-    <form action={action} className="grid gap-5 rounded-2xl border border-line bg-canvas p-6 sm:grid-cols-2 sm:p-8">
+    <form action={action} className="grid gap-5 rounded-3xl bg-canvas p-6 text-ink-900 shadow-2xl sm:grid-cols-2 sm:p-8">
       <label className="text-sm font-medium">
         Name
         <input name="name" required maxLength={CONTACT_MAX.name} autoComplete="name" className={field} />
@@ -59,7 +59,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={pending}
-          className="rounded-lg bg-accent px-6 py-3 text-sm font-medium text-accent-on transition-colors hover:bg-accent-hover disabled:opacity-60"
+          className="btn rounded-full bg-accent px-7 py-3 text-sm font-semibold text-accent-on hover:bg-accent-hover disabled:opacity-60"
         >
           {pending ? "Sending..." : "Send message"}
         </button>

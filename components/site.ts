@@ -49,6 +49,6 @@ export const MARKETS = ["India", "United Arab Emirates", "Singapore"] as const;
 
 export const NAV = [
   { label: "About", href: "/about" },
-  { label: "Products", href: "/#products" },
+  { label: "Ventures", href: "/#ventures" },
   { label: "Contact", href: "/#contact" },
 ] as const;

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import { wrap } from "@/components/Header";
+import { StonesMark } from "@/components/Logo";
+import Marquee from "@/components/Marquee";
 import { LEGAL_NAME, MARKETS, PANZO_URL } from "@/components/site";
 
 export const metadata: Metadata = {
@@ -55,152 +57,157 @@ const direction = [
   },
 ];
 
+const PILLAR_STYLES = ["bg-accent text-accent-on", "bg-ember text-ink-900", "bg-sun text-ink-900"];
+
 export default function AboutPage() {
   return (
     <>
-      <section className="hero-band relative overflow-hidden">
-        <div aria-hidden className="blob blob-a" />
-        <div className={`${wrap} relative py-20 sm:py-28`}>
-          <Reveal>
-            <p className="text-sm font-medium uppercase tracking-widest text-accent">About Stonesyz</p>
-          </Reveal>
-          <Reveal delay={80}>
-            <h1 className="mt-4 max-w-3xl text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
-              We&apos;re building the operating system for interior businesses.
-            </h1>
-          </Reveal>
-          <Reveal delay={160}>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-700">
-              {LEGAL_NAME} is the parent company of Panzo. We exist so the way interior firms run
-              their business can finally match the quality of the spaces they create.
-            </p>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className={`${wrap} py-16 sm:py-20`}>
-        <div className="max-w-3xl space-y-6 text-lg leading-relaxed text-ink-700">
-          <Reveal>
-            <p>
-              Interior businesses are some of the most demanding to run. Every project is custom,
-              timelines shift, dozens of materials and vendors move at once, and the client is living
-              through it in real time. Yet most of this is still managed on WhatsApp, Excel and memory.
-            </p>
-          </Reveal>
-          <Reveal delay={80}>
-            <p>
-              We started Panzo because we kept meeting talented studios and fit-out teams doing
-              world-class work, held back not by their craft but by the chaos behind the scenes. Missed
-              follow-ups. Quote confusion. Procurement surprises. Owners who couldn&apos;t step away
-              without everything slowing down.
-            </p>
-          </Reveal>
-          <Reveal delay={160}>
-            <p>
-              That is our mission: to run the operations behind interior businesses, from the first
-              enquiry to service, so owners and their teams spend their time on the work only they can
-              do. Panzo brings the whole journey, from leads, deals and quotations to design,
-              procurement, site work, finance, handover and service, into one connected platform.
-            </p>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="border-y border-line bg-surface">
-        <div className={`${wrap} py-16 sm:py-20`}>
-          <Reveal>
-            <p className="text-sm font-medium uppercase tracking-widest text-accent">What we believe</p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight">The principles behind the product.</h2>
-          </Reveal>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2">
-            {values.map((v, i) => (
-              <Reveal key={v.title} delay={i * 80} className="h-full">
-                <div className="lift h-full rounded-2xl border border-line bg-canvas p-6">
-                  <h3 className="font-semibold">{v.title}</h3>
-                  <p className="mt-2 leading-relaxed text-ink-700">{v.body}</p>
-                </div>
-              </Reveal>
-            ))}
+      <section className="relative overflow-hidden">
+        <div aria-hidden className="sunrise -left-40 -top-40 h-[34rem] w-[34rem]" />
+        <div className={`${wrap} relative grid items-end gap-10 pb-16 pt-14 sm:pt-20 lg:grid-cols-[1.5fr_1fr]`}>
+          <div>
+            <Reveal>
+              <span className="inline-flex items-center gap-2 rounded-full bg-accent-soft px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+                About Stonesyz
+              </span>
+            </Reveal>
+            <Reveal delay={80}>
+              <h1 className="mt-6 font-display text-5xl font-extrabold leading-[0.98] tracking-tight sm:text-7xl">
+                The operating system for interior <span className="text-fire">businesses.</span>
+              </h1>
+            </Reveal>
+            <Reveal delay={160}>
+              <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink-700">
+                {LEGAL_NAME} is the parent company of Panzo. We exist so the way interior firms run their
+                business can finally match the quality of the spaces they create.
+              </p>
+            </Reveal>
           </div>
+          <Reveal delay={200} className="hidden justify-center lg:flex">
+            <StonesMark animated className="h-64 w-64 drop-shadow-xl" />
+          </Reveal>
         </div>
       </section>
 
-      <section className={`${wrap} py-16 sm:py-20`}>
+      <section className={`${wrap} grid gap-10 py-16 sm:py-24 lg:grid-cols-[1fr_2fr]`}>
         <Reveal>
-          <figure className="relative overflow-hidden rounded-3xl border border-line bg-surface p-8 sm:p-12">
-            <div aria-hidden className="glow absolute -right-16 -top-16 h-56 w-56" />
-            <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden className="relative h-9 w-9 text-accent opacity-40">
-              <path d="M13 8H6v9h5c0 3-1 5-4 6l1 3c5-1 8-5 8-11V8Zm13 0h-7v9h5c0 3-1 5-4 6l1 3c5-1 8-5 8-11V8Z" />
-            </svg>
-            <blockquote className="relative mt-6 max-w-3xl text-xl font-medium leading-relaxed sm:text-2xl">
-              We kept meeting interior businesses held together by memory, WhatsApp threads and a dozen
-              Excel files: world-class work, running on chaos. So we started building the system we
-              wished they had: one place where an enquiry becomes a project, and a project becomes a
-              client for life.
-            </blockquote>
-            <p className="relative mt-5 max-w-2xl leading-relaxed text-ink-700">
-              We&apos;re a small team, shipping every week, working closely with the interior studios and
-              fit-out firms we build for.
-            </p>
-            <figcaption className="relative mt-8 border-t border-line pt-6">
-              <span className="block text-sm font-semibold">The Stonesyz Team</span>
-              <span className="block text-sm text-muted">Building calmer interior businesses</span>
-            </figcaption>
-          </figure>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Our story</p>
+          <p className="mt-4 font-display text-3xl font-bold leading-tight">Why we started.</p>
         </Reveal>
-      </section>
-
-      <section className="relative overflow-hidden border-y border-line">
-        <div aria-hidden className="blob blob-b" />
-        <div className={`${wrap} relative py-20 text-center sm:py-28`}>
+        <div className="space-y-6 text-lg leading-relaxed text-ink-700">
           <Reveal>
-            <h2 className="mx-auto max-w-3xl text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
-              Interior founders didn&apos;t start their studios to chase payments and dig through folders.
-            </h2>
-          </Reveal>
-          <Reveal delay={100}>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ink-700">
-              They started them to create spaces people fall in love with. Somewhere between the site
-              visits, the revisions and the endless follow-ups, the business started running them.
-              Panzo hands that control back.
+            <p>
+              Interior businesses are some of the most demanding to run. Every project is custom, timelines
+              shift, dozens of materials and vendors move at once, and the client is living through it in real
+              time. Yet most of this is still managed on WhatsApp, Excel and memory.
             </p>
           </Reveal>
-          <div className="mx-auto mt-12 grid max-w-4xl gap-4 sm:grid-cols-3">
-            {pillars.map((p, i) => (
-              <Reveal key={p.word} delay={150 + i * 100}>
-                <div className="lift h-full rounded-2xl border border-line bg-surface p-6">
-                  <p className="text-2xl font-semibold tracking-tight text-accent">{p.word}</p>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-700">{p.line}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+          <Reveal delay={80}>
+            <p>
+              We started Panzo because we kept meeting talented studios and fit-out teams doing world-class
+              work, held back not by their craft but by the chaos behind the scenes. Missed follow-ups. Quote
+              confusion. Procurement surprises. Owners who couldn&apos;t step away without everything slowing down.
+            </p>
+          </Reveal>
+          <Reveal delay={160}>
+            <p className="border-l-4 border-sun pl-5 font-medium text-ink-900">
+              Our mission: run the operations behind interior businesses, from the first enquiry to service, so
+              owners and their teams spend their time on the work only they can do.
+            </p>
+          </Reveal>
         </div>
       </section>
 
-      <section className={`${wrap} py-16 sm:py-20`}>
+      <Marquee />
+
+      <section className="bg-surface">
+        <div className={`${wrap} py-20 sm:py-28`}>
+          <Reveal>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">What we believe</p>
+            <h2 className="mt-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">Four principles.</h2>
+          </Reveal>
+          <ol className="mt-12 divide-y-2 divide-line border-y-2 border-line">
+            {values.map((v, i) => (
+              <Reveal as="li" key={v.title} delay={i * 60} className="grid gap-4 py-8 sm:grid-cols-[6rem_1fr_1.4fr] sm:items-baseline">
+                <span className="font-display text-5xl font-extrabold outline-num">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="font-display text-2xl font-bold">{v.title}</h3>
+                <p className="leading-relaxed text-ink-700">{v.body}</p>
+              </Reveal>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section className={`${wrap} py-20 sm:py-28`}>
         <Reveal>
-          <p className="text-sm font-medium uppercase tracking-widest text-accent">Where we&apos;re going</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight">We&apos;re starting with interiors.</h2>
-          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink-700">
-            Our vision is simple: every interior and fit-out firm, starting in {MARKETS.join(", ").replace(/, (?=[^,]*$)/, " and ")},
-            runs on one calm system. Panzo is built as a platform, not a one-off tool, to grow with the
-            firms that adopt it.
+          <h2 className="max-w-3xl font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
+            Founders didn&apos;t start their studios to chase payments and dig through folders.
+          </h2>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-700">
+            They started them to create spaces people fall in love with. Somewhere between the site visits, the
+            revisions and the endless follow-ups, the business started running them. We hand that control back.
           </p>
         </Reveal>
-        <div className="mt-10 grid gap-4 sm:grid-cols-3">
+        <div className="mt-12 grid gap-4 sm:grid-cols-3">
+          {pillars.map((p, i) => (
+            <Reveal key={p.word} delay={i * 100} className="h-full">
+              <div className={`btn h-full rounded-[2rem] p-8 ${PILLAR_STYLES[i]}`}>
+                <p className="font-display text-4xl font-extrabold tracking-tight">{p.word}</p>
+                <p className="mt-3 leading-relaxed opacity-90">{p.line}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-maroon-2 text-on-maroon">
+        <div className={`${wrap} py-20 sm:py-28`}>
+          <Reveal>
+            <figure className="max-w-4xl">
+              <blockquote className="font-display text-3xl font-bold leading-snug sm:text-4xl">
+                &ldquo;We kept meeting interior businesses held together by memory, WhatsApp threads and a dozen
+                Excel files. So we started building the system we wished they had: one place where an enquiry
+                becomes a project, and a project becomes a <span className="text-sun">client for life.</span>&rdquo;
+              </blockquote>
+              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-on-maroon/80">
+                We&apos;re a small team, shipping every week, working closely with the interior studios and
+                fit-out firms we build for.
+              </p>
+              <figcaption className="mt-8 flex items-center gap-3">
+                <StonesMark className="h-10 w-10" />
+                <span>
+                  <span className="block font-semibold">The Stonesyz Team</span>
+                  <span className="block text-sm text-on-maroon/70">Building calmer interior businesses</span>
+                </span>
+              </figcaption>
+            </figure>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className={`${wrap} py-20 sm:py-28`}>
+        <Reveal>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Where we&apos;re going</p>
+          <h2 className="mt-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">We&apos;re starting with interiors.</h2>
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-700">
+            Our vision: every interior and fit-out firm, starting in {MARKETS.join(", ").replace(/, (?=[^,]*$)/, " and ")},
+            runs on one calm system. Panzo is built as a platform, not a one-off tool, to grow with the firms
+            that adopt it.
+          </p>
+        </Reveal>
+        <div className="mt-12 grid gap-6 sm:grid-cols-3">
           {direction.map((d, i) => (
             <Reveal key={d.title} delay={i * 90} className="h-full">
-              <div className="lift h-full rounded-2xl border border-line bg-surface p-6">
-                <h3 className="font-semibold">{d.title}</h3>
+              <div className="h-full border-t-4 border-accent pt-5">
+                <h3 className="font-display text-xl font-bold">{d.title}</h3>
                 <p className="mt-2 leading-relaxed text-ink-700">{d.body}</p>
               </div>
             </Reveal>
           ))}
         </div>
         <Reveal delay={200}>
-          <a href={PANZO_URL} className="mt-10 inline-block rounded-lg bg-accent px-5 py-3 text-sm font-medium text-accent-on transition-colors hover:bg-accent-hover">
-            See Panzo
+          <a href={PANZO_URL} className="btn mt-12 inline-flex rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-on hover:bg-accent-hover">
+            Visit Panzo &rarr;
           </a>
         </Reveal>
       </section>

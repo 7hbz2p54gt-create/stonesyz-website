@@ -1,95 +1,129 @@
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
 import { wrap } from "@/components/Header";
-import ProductCard from "@/components/ProductCard";
+import { StonesMark } from "@/components/Logo";
+import Marquee from "@/components/Marquee";
+import ProductRow from "@/components/ProductRow";
 import Reveal from "@/components/Reveal";
 import { CONTACT_EMAIL, LEGAL_NAME, MARKETS, PANZO_URL, PRODUCTS } from "@/components/site";
+
+function SectionLabel({ n, children }: { n: string; children: React.ReactNode }) {
+  return (
+    <p className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+      <span className="font-display text-sm">({n})</span>
+      <span className="h-px w-10 bg-accent" aria-hidden />
+      {children}
+    </p>
+  );
+}
 
 export default function Home() {
   return (
     <>
-      <section className="hero-band relative overflow-hidden">
-        <div aria-hidden className="blob blob-a" />
-        <div aria-hidden className="blob blob-b" />
-        <div className={`${wrap} relative py-20 sm:py-28`}>
-          <Reveal>
-            <p className="text-sm font-medium uppercase tracking-widest text-accent">The parent company of Panzo</p>
-          </Reveal>
-          <Reveal delay={80}>
-            <h1 className="mt-4 max-w-3xl text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
-              We build software for the businesses that build <span className="shimmer">interiors.</span>
-            </h1>
-          </Reveal>
-          <Reveal delay={160}>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-700">
-              {LEGAL_NAME} is the parent company of Panzo, one system for interior and fit-out companies
-              to run sales, projects, site work and their people, from the first enquiry to the final handover.
-            </p>
-          </Reveal>
-          <Reveal delay={240}>
-            <div className="mt-10 flex flex-wrap gap-3">
-              <a href={PANZO_URL} className="lift rounded-lg bg-accent px-5 py-3 text-sm font-medium text-accent-on hover:bg-accent-hover">
-                Visit Panzo
-              </a>
-              <Link href="/about" className="lift rounded-lg border border-line bg-canvas px-5 py-3 text-sm font-medium hover:bg-surface">
-                About Stonesyz
-              </Link>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="border-y border-line bg-surface">
-        <div className={`${wrap} grid gap-10 py-16 sm:grid-cols-2`}>
-          <Reveal>
-            <h2 className="text-2xl font-semibold tracking-tight">Who we are</h2>
-            <p className="mt-4 leading-relaxed text-ink-700">
-              Interior businesses juggle designers, site engineers, crews, vendors and clients, usually
-              across spreadsheets and chat groups. Stonesyz exists to give them one place to work, built
-              around how projects really run on site.
-            </p>
-            <Link href="/about" className="mt-4 inline-block text-sm font-medium text-accent hover:text-accent-hover">
-              Read our story &rarr;
-            </Link>
-          </Reveal>
-          <Reveal delay={100}>
-            <h3 className="text-sm font-medium uppercase tracking-widest text-muted">Where we work</h3>
-            <ul className="mt-4 space-y-3">
-              {MARKETS.map((m) => (
-                <li key={m} className="flex items-center gap-3 text-lg">
-                  <span aria-hidden className="pulse-dot h-2 w-2 rounded-full bg-accent" />
-                  {m}
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-        </div>
-      </section>
-
-      <section id="products" className={`${wrap} scroll-mt-16 py-16 sm:py-20`}>
-        <Reveal>
-          <h2 className="text-2xl font-semibold tracking-tight">Panzo products</h2>
-          <p className="mt-3 max-w-2xl text-ink-700">One login, one set of records, shared by the office, the site and HR.</p>
-        </Reveal>
-        <ul className="mt-10 grid gap-5 md:grid-cols-3">
-          {PRODUCTS.map((p, i) => (
-            <Reveal as="li" key={p.name} delay={i * 100} className="h-full">
-              <ProductCard p={p} />
+      <section className="relative overflow-hidden">
+        <div aria-hidden className="sunrise -right-40 -top-32 h-[38rem] w-[38rem]" />
+        <div className={`${wrap} relative grid items-center gap-12 pb-20 pt-14 sm:pt-20 lg:grid-cols-[1.4fr_1fr]`}>
+          <div>
+            <Reveal>
+              <span className="inline-flex items-center gap-2 rounded-full bg-accent-soft px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+                <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden />
+                The parent company of Panzo
+              </span>
             </Reveal>
-          ))}
-        </ul>
+            <Reveal delay={80}>
+              <h1 className="mt-6 font-display text-5xl font-extrabold leading-[0.98] tracking-tight sm:text-7xl">
+                Building the systems behind the <span className="text-fire">spaces.</span>
+              </h1>
+            </Reveal>
+            <Reveal delay={160}>
+              <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink-700">
+                {LEGAL_NAME} builds software for interior and fit-out businesses. Our first product,
+                Panzo, runs sales, projects, site work and people, from the first enquiry to the final handover.
+              </p>
+            </Reveal>
+            <Reveal delay={240}>
+              <div className="mt-9 flex flex-wrap gap-3">
+                <Link href="/#ventures" className="btn rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-on hover:bg-accent-hover">
+                  See what we make
+                </Link>
+                <Link href="/about" className="btn rounded-full border-2 border-ink-900 px-6 py-3 text-sm font-semibold hover:border-accent hover:text-accent">
+                  Our story
+                </Link>
+              </div>
+            </Reveal>
+          </div>
+          <Reveal delay={200} className="hidden justify-center lg:flex">
+            <StonesMark animated className="h-80 w-80 drop-shadow-xl" />
+          </Reveal>
+        </div>
       </section>
 
-      <section id="contact" className="scroll-mt-16 border-t border-line bg-surface">
-        <div className={`${wrap} grid gap-10 py-16 sm:py-20 lg:grid-cols-[1fr_1.4fr]`}>
+      <Marquee />
+
+      <section className={`${wrap} grid gap-12 py-20 sm:py-28 lg:grid-cols-2`}>
+        <Reveal>
+          <SectionLabel n="01">Who we are</SectionLabel>
+          <h2 className="mt-5 font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
+            A company built for the people who build interiors.
+          </h2>
+        </Reveal>
+        <Reveal delay={100}>
+          <p className="text-lg leading-relaxed text-ink-700">
+            Interior businesses juggle designers, site engineers, crews, vendors and clients, usually across
+            spreadsheets and chat groups. Stonesyz exists to give them one place to work, built around how
+            projects really run on site.
+          </p>
+          <p className="mt-8 text-xs font-semibold uppercase tracking-[0.2em] text-muted">Where we work</p>
+          <ul className="mt-4 flex flex-wrap gap-3">
+            {MARKETS.map((m) => (
+              <li key={m} className="rounded-full border-2 border-line px-4 py-2 font-medium">{m}</li>
+            ))}
+          </ul>
+          <Link href="/about" className="mt-8 inline-flex items-center gap-2 font-semibold text-accent hover:text-accent-hover">
+            Read our story <span aria-hidden>&rarr;</span>
+          </Link>
+        </Reveal>
+      </section>
+
+      <section id="ventures" className="scroll-mt-16 bg-surface">
+        <div className={`${wrap} py-20 sm:py-28`}>
           <Reveal>
-            <h2 className="text-2xl font-semibold tracking-tight">Contact</h2>
-            <p className="mt-3 text-ink-700">
-              For partnerships, press or anything about the company, send us a message. For a Panzo demo,
-              use the form on <a href={`${PANZO_URL}/contact`} className="text-accent underline-offset-4 hover:underline">thepanzo.com</a>.
+            <SectionLabel n="02">What we make</SectionLabel>
+            <h2 className="mt-5 max-w-3xl font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
+              Panzo: one platform, three ways in.
+            </h2>
+            <p className="mt-4 max-w-2xl text-lg text-ink-700">
+              One login and one set of records, shared by the office, the site and HR.{" "}
+              <a href={PANZO_URL} className="font-semibold text-accent underline-offset-4 hover:underline">thepanzo.com</a>
             </p>
-            <p className="mt-6 text-sm text-muted">Or email</p>
-            <a href={`mailto:${CONTACT_EMAIL}`} className="text-lg font-medium text-accent underline-offset-4 hover:underline">
+          </Reveal>
+          <div className="mt-16 space-y-24">
+            {PRODUCTS.map((p, i) => (
+              <Reveal key={p.name}>
+                <ProductRow p={p} index={i} />
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="scroll-mt-16 bg-maroon-2 text-on-maroon">
+        <div className={`${wrap} grid gap-12 py-20 sm:py-28 lg:grid-cols-[1fr_1.3fr]`}>
+          <Reveal>
+            <p className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-sun">
+              <span className="font-display text-sm">(03)</span>
+              <span className="h-px w-10 bg-sun" aria-hidden />
+              Talk to us
+            </p>
+            <h2 className="mt-5 font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
+              Let&apos;s build something <span className="text-sun">solid.</span>
+            </h2>
+            <p className="mt-5 text-lg leading-relaxed text-on-maroon/80">
+              For partnerships, press or anything about the company, send us a message. For a Panzo demo,
+              use the form on{" "}
+              <a href={`${PANZO_URL}/contact`} className="font-semibold text-sun underline-offset-4 hover:underline">thepanzo.com</a>.
+            </p>
+            <a href={`mailto:${CONTACT_EMAIL}`} className="mt-8 inline-block font-display text-2xl font-bold text-sun underline-offset-4 hover:underline">
               {CONTACT_EMAIL}
             </a>
           </Reveal>
