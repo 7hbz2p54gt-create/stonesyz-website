@@ -1,5 +1,5 @@
 /** A slow sideways band of words; pauses on hover, still under reduced motion. */
-const WORDS = ["Interiors", "Construction", "Infrastructure", "Fit-out", "Site", "Office", "People", "India", "UAE", "Singapore"];
+const WORDS = ["Infrastructure", "Real estate", "Interiors", "Projects", "Payments", "Handover", "India", "UAE", "Singapore"];
 
 export default function Marquee() {
   const row = [...WORDS, ...WORDS];

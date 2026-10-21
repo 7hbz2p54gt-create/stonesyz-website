@@ -52,3 +52,55 @@ export const NAV = [
   { label: "Ventures", href: "/#ventures" },
   { label: "Contact", href: "/#contact" },
 ] as const;
+
+/*
+ * Direction (owner 2026-10-21): Stonesyz exists to solve the big problems of
+ * infrastructure, real estate and interiors. Only interiors has a live product
+ * (Panzo). Never name unbuilt products or give dates for the other two.
+ * Vision and mission wording is a draft awaiting the owner's sign-off.
+ */
+export const VISION =
+  "A built world where every project, from a highway to a housing tower to a single home interior, runs on clear, connected systems that everyone involved can trust.";
+
+export const MISSION =
+  "To solve the hardest operational problems in infrastructure, real estate and interiors: projects that slip, cash that gets stuck, information scattered across dozens of parties, and handovers nobody can verify.";
+
+export const PROBLEMS = [
+  {
+    title: "Projects slip, and nobody sees it in time",
+    body: "Delays and overruns usually surface after the cost is already locked in, because progress lives in site visits, calls and chat groups instead of one live picture.",
+  },
+  {
+    title: "Cash gets stuck between stages",
+    body: "Milestone billing, retentions, advances and vendor payments are tracked in spreadsheets, so money that is owed waits and money that is spent goes unchecked.",
+  },
+  {
+    title: "Every party holds its own version",
+    body: "Owners, developers, contractors, consultants, vendors and buyers each keep separate records. Decisions get lost between them, and disputes start there.",
+  },
+  {
+    title: "Handover comes without a record",
+    body: "Keys change hands without a trusted history of what was built, with which materials, by whom and with which warranties, so problems come back with no trail.",
+  },
+] as const;
+
+export const INDUSTRIES = [
+  {
+    name: "Infrastructure",
+    status: "Where we're heading",
+    live: false,
+    body: "Long, high-stakes projects with many contractors, strict milestones and public money. They need one source of truth for progress, quality and payments.",
+  },
+  {
+    name: "Real estate",
+    status: "Where we're heading",
+    live: false,
+    body: "From launch to possession and beyond: developers, sales teams, contractors and buyers who deserve the same clear view of every unit and every payment.",
+  },
+  {
+    name: "Interiors",
+    status: "Live today: Panzo",
+    live: true,
+    body: "Design, quotations, procurement, site work, handover and service for interior and fit-out firms, in one platform that is already running.",
+  },
+] as const;

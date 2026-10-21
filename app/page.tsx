@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
+import { Industries, Problems, VisionMission } from "@/components/Direction";
 import { wrap } from "@/components/Header";
 import { StonesMark } from "@/components/Logo";
 import Marquee from "@/components/Marquee";
@@ -32,14 +33,14 @@ export default function Home() {
             </Reveal>
             <Reveal delay={80}>
               <h1 className="mt-6 font-display text-5xl font-bold leading-[0.98] tracking-tight sm:text-7xl">
-                Building the systems behind the <span className="text-fire">spaces</span><span className="-ml-[0.06em] text-sun">.</span>
+                Solving the big problems of the <span className="text-fire">built world</span><span className="-ml-[0.06em] text-sun">.</span>
               </h1>
             </Reveal>
             <Reveal delay={160}>
               <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink-700">
-                {LEGAL_NAME} builds software for the businesses that build: interiors, construction and
-                infrastructure. Our first product, Panzo, runs interior and fit-out firms from the first enquiry
-                to the final handover.
+                {LEGAL_NAME} builds software for infrastructure, real estate and interiors: the industries
+                that shape how people live and work. Our first product, Panzo, already runs interior and fit-out
+                firms from the first enquiry to the final handover.
               </p>
             </Reveal>
             <Reveal delay={240}>
@@ -61,35 +62,41 @@ export default function Home() {
 
       <Marquee />
 
-      <section className={`${wrap} grid gap-12 py-20 sm:py-28 lg:grid-cols-2`}>
+      <VisionMission />
+
+      <section className={`${wrap} py-20 sm:py-28`}>
         <Reveal>
-          <SectionLabel n="01">Who we are</SectionLabel>
-          <h2 className="mt-5 font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
-            Software for the people who build.
+          <SectionLabel n="01">The problems</SectionLabel>
+          <h2 className="mt-5 max-w-3xl font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
+            The built world still runs on chat groups and spreadsheets.
           </h2>
-        </Reveal>
-        <Reveal delay={100}>
-          <p className="text-lg leading-relaxed text-ink-700">
-            Interior studios, contractors and infrastructure teams all juggle engineers, designers, crews,
-            vendors and clients, usually across spreadsheets and chat groups. Stonesyz exists to give the
-            built world one place to work, built around how projects really run on site.
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-700">
+            Whether it is a highway, a housing tower or an apartment interior, the same problems repeat. These
+            are the ones we are here to solve.
           </p>
-          <p className="mt-8 text-xs font-semibold uppercase tracking-[0.2em] text-muted">Where we work</p>
-          <ul className="mt-4 flex flex-wrap gap-3">
-            {MARKETS.map((m) => (
-              <li key={m} className="rounded-full border-2 border-line px-4 py-2 font-medium">{m}</li>
-            ))}
-          </ul>
-          <Link href="/about" className="mt-8 inline-flex items-center gap-2 font-semibold text-accent hover:text-accent-hover">
-            Read our story <span aria-hidden>&rarr;</span>
-          </Link>
         </Reveal>
+        <Problems />
       </section>
 
-      <section id="ventures" className="scroll-mt-16 bg-surface">
+      <section className="bg-surface">
         <div className={`${wrap} py-20 sm:py-28`}>
           <Reveal>
-            <SectionLabel n="02">What we make</SectionLabel>
+            <SectionLabel n="02">Where we work</SectionLabel>
+            <h2 className="mt-5 max-w-3xl font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
+              Three industries. One way of working.
+            </h2>
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-700">
+              We are starting in {MARKETS.join(", ").replace(/, (?=[^,]*$)/, " and ")}.
+            </p>
+          </Reveal>
+          <Industries />
+        </div>
+      </section>
+
+      <section id="ventures" className="scroll-mt-16">
+        <div className={`${wrap} py-20 sm:py-28`}>
+          <Reveal>
+            <SectionLabel n="03">What we make</SectionLabel>
             <h2 className="mt-5 max-w-3xl font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
               We started with interiors: Panzo.
             </h2>
@@ -113,7 +120,7 @@ export default function Home() {
         <div className={`${wrap} grid gap-12 py-20 sm:py-28 lg:grid-cols-[1fr_1.3fr]`}>
           <Reveal>
             <p className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-sun">
-              <span className="font-display text-sm">(03)</span>
+              <span className="font-display text-sm">(04)</span>
               <span className="h-px w-10 bg-sun" aria-hidden />
               Talk to us
             </p>
