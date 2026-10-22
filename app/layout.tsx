@@ -33,6 +33,7 @@ export const metadata: Metadata = {
     title: `${BRAND} | ${TAGLINE}`,
     description,
   },
+  twitter: { card: "summary_large_image" },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
