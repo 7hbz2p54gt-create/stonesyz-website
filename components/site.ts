@@ -57,13 +57,11 @@ export const NAV = [
  * Direction (owner 2026-10-21): Stonesyz exists to solve the big problems of
  * infrastructure, real estate and interiors. Only interiors has a live product
  * (Panzo). Never name unbuilt products or give dates for the other two.
- * Vision and mission wording is a draft awaiting the owner's sign-off.
+ * Vision and mission: short versions (owner asked for small and easy to say).
  */
-export const VISION =
-  "A built world where every project, from a highway to a housing tower to a single home interior, runs on clear, connected systems that everyone involved can trust.";
+export const VISION = "A built world that runs on trust.";
 
-export const MISSION =
-  "To solve the hardest operational problems in infrastructure, real estate and interiors: projects that slip, cash that gets stuck, information scattered across dozens of parties, and handovers nobody can verify.";
+export const MISSION = "Solve the biggest problems in infrastructure, real estate and interiors.";
 
 export const PROBLEMS = [
   {

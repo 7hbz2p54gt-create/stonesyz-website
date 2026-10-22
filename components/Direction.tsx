@@ -16,7 +16,7 @@ export function VisionMission() {
               <span className="h-px w-10 bg-sun" aria-hidden />
               {b.label}
             </p>
-            <p className="mt-6 font-display text-2xl font-bold leading-snug sm:text-3xl">{b.text}</p>
+            <p className="mt-6 font-display text-3xl font-bold leading-tight sm:text-5xl">{b.text}</p>
           </Reveal>
         ))}
       </div>
