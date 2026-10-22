@@ -54,14 +54,16 @@ export const NAV = [
 ] as const;
 
 /*
- * Direction (owner 2026-10-21): Stonesyz exists to solve the big problems of
+ * Direction (owner 2026-10-22): Stonesyz solves the everyday problems of the people
+ * who build. For infrastructure we serve the contractors, subcontractors and vendors
+ * who deliver projects, not the giants directly. Covers
  * infrastructure, real estate and interiors. Only interiors has a live product
  * (Panzo). Never name unbuilt products or give dates for the other two.
  * Vision and mission: short versions (owner asked for small and easy to say).
  */
 export const VISION = "A built world that runs on trust.";
 
-export const MISSION = "Solve the biggest problems in infrastructure, real estate and interiors.";
+export const MISSION = "Solve the everyday problems of the people who build: from interiors to real estate to infrastructure.";
 
 export const PROBLEMS = [
   {
@@ -87,7 +89,7 @@ export const INDUSTRIES = [
     name: "Infrastructure",
     status: "Where we're heading",
     live: false,
-    body: "Long, high-stakes projects with many contractors, strict milestones and public money. They need one source of truth for progress, quality and payments.",
+    body: "For the contractors, subcontractors and vendors who deliver infrastructure projects, and need clear site progress, billing and payments without enterprise complexity.",
   },
   {
     name: "Real estate",
