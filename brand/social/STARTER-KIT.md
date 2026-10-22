@@ -97,7 +97,7 @@ the "Site Buddy" voice, no prices (point to thepanzo.com/pricing), no client dat
 and **only live features**: check each one against `panzo/CURRENT.md` before filming.
 Use the demo company data, as in the website screenshots.
 
-**Channel:** `@thepanzo`, using Panzo's own logo and colours (not the StoneSyz ones).
+**Channel:** `@thepanzoapp` (created 2026-10-22), using Panzo's own logo and colours (not the StoneSyz ones).
 
 **First ten videos** (short, 30 to 90 seconds, phone screen recordings):
 1. A day on site with Panzo Mobile: open My Day, see what needs you today
