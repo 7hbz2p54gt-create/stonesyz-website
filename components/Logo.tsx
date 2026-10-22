@@ -1,4 +1,4 @@
-/** Three stacked stones: the StoneSyz mark. Colours follow the theme tokens. */
+/** Three stacked stones: the StoneSyz mark. The wordmark is always lowercase "stonesyz" (owner); text elsewhere writes StoneSyz. Colours follow the theme tokens. */
 export function StonesMark({ className = "h-8 w-8", animated = false }: { className?: string; animated?: boolean }) {
   const a = animated ? "stone" : "";
   return (
@@ -14,7 +14,7 @@ export default function Logo() {
   return (
     <span className="inline-flex items-center gap-2">
       <StonesMark className="h-7 w-7" />
-      <span className="font-display text-xl font-bold tracking-tight">StoneSyz</span>
+      <span className="font-display text-xl font-bold tracking-tight">stonesyz</span>
     </span>
   );
 }

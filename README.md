@@ -37,5 +37,5 @@ Planned: Vercel, with the domain's DNS kept at Cloudflare. **Not deployed yet; d
 
 `brand/`: `stonesyz-logo.png` (dark text, transparent), `stonesyz-logo-white.png` (light text for dark
 backgrounds), `stonesyz-mark-1024.png` (mark only, transparent), `stonesyz-icon-1024.png` (mark on cream,
-for app icons and profile pictures), `stonesyz-mark.svg`. Colours: red #D7261E, ember #F2701C,
+for app icons and profile pictures), `stonesyz-mark.svg`. The wordmark is always lowercase **stonesyz**; in sentences write StoneSyz. Colours: red #D7261E, ember #F2701C,
 saffron #FFB703, ink #24100B, cream #FFF8EE, maroon #4A0D10.

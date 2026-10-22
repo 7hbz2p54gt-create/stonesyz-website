@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="flex flex-col gap-10 sm:flex-row sm:items-end sm:justify-between">
           <div className="flex items-center gap-4">
             <StonesMark className="h-14 w-14" />
-            <p className="font-display text-5xl font-bold tracking-tight sm:text-7xl">StoneSyz</p>
+            <p className="font-display text-5xl font-bold tracking-tight sm:text-7xl">stonesyz</p>
           </div>
           <ul className="space-y-2 text-sm">
             <li><Link href="/about" className="hover:text-sun">About</Link></li>
