@@ -16,6 +16,7 @@ export default function Footer() {
           <ul className="space-y-2 text-sm">
             <li><Link href="/about" className="hover:text-sun">About</Link></li>
             <li><a href={PANZO_URL} className="hover:text-sun">Panzo</a></li>
+            <li><Link href="/privacy" className="hover:text-sun">Privacy</Link></li>
             <li><a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-sun">{CONTACT_EMAIL}</a></li>
           </ul>
         </div>

@@ -3,7 +3,7 @@
 import { useActionState } from "react";
 import { sendContact, type ContactState } from "@/app/actions/contact";
 import { CONTACT_MAX } from "@/lib/contactInput";
-import { PANZO_URL } from "./site";
+import Link from "next/link";
 
 const field =
   "mt-1.5 w-full rounded-xl border-2 border-line bg-canvas px-3.5 py-2.5 text-ink-900 placeholder:text-muted transition-colors focus:border-accent focus:outline-none";
@@ -49,7 +49,7 @@ export default function ContactForm() {
         <input name="consent" type="checkbox" required className="mt-1 h-4 w-4 accent-[var(--color-accent)]" />
         <span>
           I agree that StoneSyz may use these details to reply to me. See our{" "}
-          <a href={`${PANZO_URL}/privacy`} className="text-accent underline-offset-4 hover:underline">privacy policy</a>.
+          <Link href="/privacy" className="text-accent underline-offset-4 hover:underline">privacy policy</Link>.
         </span>
       </label>
       {state.status === "error" && (
