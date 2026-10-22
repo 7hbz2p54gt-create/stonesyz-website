@@ -1,6 +1,6 @@
 # Stonesyz website
 
-Corporate site for **Stonesyz Private Limited** at https://stonesyz.com, the parent company of Panzo. Positioning: software for interiors, construction and infrastructure; Panzo (interiors) is the first product. Never claim Panzo serves construction or infrastructure today, and never name unbuilt products or dates.
+Corporate site for **StoneSyz** (legal name **Stonesyz Private Limited**, never change it) at https://stonesyz.com, the company behind Panzo. Tagline: "Strong Foundations. Smart Systems." Positioning: software for interiors, construction and infrastructure; Panzo (interiors) is the first product. Never claim Panzo serves construction or infrastructure today, and never name unbuilt products or dates.
 Pages: `/` (who we are, Panzo products, contact form) and `/about` (moved from thepanzo.com/about,
 reworded for the parent company). No database, no login.
 

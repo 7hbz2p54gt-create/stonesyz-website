@@ -71,7 +71,7 @@ export async function sendContact(_prev: ContactState, formData: FormData): Prom
       from: process.env.SMTP_FROM || CONTACT_EMAIL,
       to: process.env.SMTP_TO || CONTACT_EMAIL,
       replyTo: email,
-      subject: `Stonesyz contact: ${name}${company ? `, ${company}` : ""}`,
+      subject: `StoneSyz contact: ${name}${company ? `, ${company}` : ""}`,
       text: [
         `Name:    ${name}`,
         `Company: ${company || "-"}`,

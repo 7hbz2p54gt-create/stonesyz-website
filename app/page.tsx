@@ -6,7 +6,7 @@ import { StonesMark } from "@/components/Logo";
 import Marquee from "@/components/Marquee";
 import ProductRow from "@/components/ProductRow";
 import Reveal from "@/components/Reveal";
-import { CONTACT_EMAIL, LEGAL_NAME, MARKETS, PANZO_URL, PRODUCTS } from "@/components/site";
+import { BRAND, CONTACT_EMAIL, MARKETS, PANZO_URL, PRODUCTS } from "@/components/site";
 
 function SectionLabel({ n, children }: { n: string; children: React.ReactNode }) {
   return (
@@ -28,19 +28,19 @@ export default function Home() {
             <Reveal>
               <span className="inline-flex items-center gap-2 rounded-full bg-accent-soft px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden />
-                The parent company of Panzo
+                The company behind Panzo
               </span>
             </Reveal>
             <Reveal delay={80}>
               <h1 className="mt-6 font-display text-5xl font-bold leading-[0.98] tracking-tight sm:text-7xl">
-                Solving the big problems of the <span className="text-fire">built world</span><span className="-ml-[0.06em] text-sun">.</span>
+                Strong Foundations. <span className="text-fire">Smart Systems</span><span className="-ml-[0.06em] text-sun">.</span>
               </h1>
             </Reveal>
             <Reveal delay={160}>
               <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink-700">
-                {LEGAL_NAME} builds software for infrastructure, real estate and interiors: the industries
-                that shape how people live and work. Our first product, Panzo, already runs interior and fit-out
-                firms from the first enquiry to the final handover.
+                {BRAND} builds technology that removes complexity: reliable, simple systems that solve real
+                problems. We are starting with the built world, and our first product, Panzo, already runs interior
+                and fit-out firms from the first enquiry to the final handover.
               </p>
             </Reveal>
             <Reveal delay={240}>

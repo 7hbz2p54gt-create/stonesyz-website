@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import { LEGAL_NAME, SITE_URL } from "@/components/site";
+import { BRAND, LEGAL_NAME, SITE_URL, TAGLINE } from "@/components/site";
 
 // Plus Jakarta Sans for headlines and text (SIL OFL, licence in app/fonts).
 // Self-hosted, and deliberately not Panzo's Poppins.
@@ -19,18 +19,18 @@ const jakarta = localFont({
   display: "swap",
 });
 
-const description = `${LEGAL_NAME} is the parent company of Panzo. We build software to solve the big problems of infrastructure, real estate and interiors.`;
+const description = `${BRAND} builds technology on strong foundations: reliable, simple systems that solve real problems, starting with Panzo. ${LEGAL_NAME}.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Stonesyz | The parent company of Panzo",
+  title: `${BRAND} | ${TAGLINE}`,
   description,
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: SITE_URL,
-    siteName: "Stonesyz",
-    title: "Stonesyz | The parent company of Panzo",
+    siteName: BRAND,
+    title: `${BRAND} | ${TAGLINE}`,
     description,
   },
 };

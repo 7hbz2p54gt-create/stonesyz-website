@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-20 bg-canvas/80 backdrop-blur">
       <div className={`${wrap} flex h-16 items-center justify-between gap-4`}>
-        <Link href="/" aria-label="Stonesyz home">
+        <Link href="/" aria-label="StoneSyz home">
           <Logo />
         </Link>
         <nav aria-label="Main" className="flex items-center gap-1 text-sm font-medium sm:gap-2">

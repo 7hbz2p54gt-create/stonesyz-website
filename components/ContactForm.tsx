@@ -48,7 +48,7 @@ export default function ContactForm() {
       <label className="flex items-start gap-3 text-sm text-ink-700 sm:col-span-2">
         <input name="consent" type="checkbox" required className="mt-1 h-4 w-4 accent-[var(--color-accent)]" />
         <span>
-          I agree that Stonesyz may use these details to reply to me. See our{" "}
+          I agree that StoneSyz may use these details to reply to me. See our{" "}
           <a href={`${PANZO_URL}/privacy`} className="text-accent underline-offset-4 hover:underline">privacy policy</a>.
         </span>
       </label>

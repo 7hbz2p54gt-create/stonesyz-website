@@ -4,47 +4,19 @@ import { wrap } from "@/components/Header";
 import { StonesMark } from "@/components/Logo";
 import Marquee from "@/components/Marquee";
 import { Industries, VisionMission } from "@/components/Direction";
-import { LEGAL_NAME, MARKETS, PANZO_URL } from "@/components/site";
+import { AMBITION, BRAND, LEGAL_NAME, LOGO_STORY, MARKETS, NAME_STORY, PANZO_URL, TAGLINE, VALUES } from "@/components/site";
 
 export const metadata: Metadata = {
-  title: "About | Stonesyz",
-  description:
-    "Stonesyz is the parent company of Panzo. We build software to solve the big problems of infrastructure, real estate and interiors, starting with Panzo for interior and fit-out firms.",
+  title: `About | ${BRAND}`,
+  description: `The story behind ${BRAND}: strong foundations and smart systems. The company behind Panzo and the products we will build next.`,
   alternates: { canonical: "/about" },
 };
 
 /*
- * Moved from thepanzo.com/about (owner 2026-10-21) and reworded for the parent
- * company. Stonesyz speaks as a team, never as a named person or with a
- * headshot (same standing rule as Panzo's TeamNote).
+ * Brand story from the owner (2026-10-22). StoneSyz speaks as a team, never as a
+ * named person or with a headshot (same standing rule as Panzo's TeamNote).
  */
-const values = [
-  {
-    title: "Built for the trade, not for demos",
-    body: "Every feature comes from how projects actually run on site: messy, fast-moving and relationship-driven. We started in India, and we're bringing Panzo to firms in the UAE and Singapore too.",
-  },
-  {
-    title: "Calm over clever",
-    body: "Software should reduce noise, not add to it. We choose the clear path over the flashy one, every time.",
-  },
-  {
-    title: "Your data, your business",
-    body: "Panzo is a place to run your company: structured, private and yours. We earn trust by protecting it.",
-  },
-  {
-    title: "Progress you can feel",
-    body: "We ship steadily and listen closely, so the product keeps getting better in the ways that matter to the people who use it.",
-  },
-];
-
-const pillars = [
-  { word: "Calm", line: "instead of chaos across a dozen chat groups." },
-  { word: "Clarity", line: "instead of guessing where each project really stands." },
-  { word: "Confidence", line: "in every quote, every payment, every handover." },
-];
-
-
-const PILLAR_STYLES = ["bg-accent text-accent-on", "bg-ember text-ink-900", "bg-sun text-ink-900"];
+const STONE_FILL = { accent: "bg-accent", ember: "bg-ember", sun: "bg-sun" } as const;
 
 export default function AboutPage() {
   return (
@@ -55,18 +27,18 @@ export default function AboutPage() {
           <div>
             <Reveal>
               <span className="inline-flex items-center gap-2 rounded-full bg-accent-soft px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-                About Stonesyz
+                About {BRAND}
               </span>
             </Reveal>
             <Reveal delay={80}>
               <h1 className="mt-6 font-display text-5xl font-bold leading-[0.98] tracking-tight sm:text-7xl">
-                Software for the <span className="text-fire">built world</span><span className="-ml-[0.06em] text-sun">.</span>
+                Strong Foundations. <span className="text-fire">Smart Systems</span><span className="-ml-[0.06em] text-sun">.</span>
               </h1>
             </Reveal>
             <Reveal delay={160}>
               <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink-700">
-                {LEGAL_NAME} is the parent company of Panzo. We exist to solve the big problems of
-                infrastructure, real estate and interiors, so the way these industries run can match what they build.
+                Every great idea needs a strong foundation. Every growing business needs systems that work.
+                That is the thinking behind {BRAND}.
               </p>
             </Reveal>
           </div>
@@ -76,47 +48,77 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className={`${wrap} grid gap-10 py-16 sm:py-24 lg:grid-cols-[1fr_2fr]`}>
+      <section className={`${wrap} py-16 sm:py-24`}>
         <Reveal>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Our story</p>
-          <p className="mt-4 font-display text-3xl font-bold leading-tight">Why we started.</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">The story behind the name</p>
+          <h2 className="mt-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">
+            <span className="text-accent">Stone</span> + <span className="text-ember">Syz</span>
+          </h2>
         </Reveal>
-        <div className="space-y-6 text-lg leading-relaxed text-ink-700">
-          <Reveal>
-            <p>
-              The businesses that build are some of the most demanding to run. Every project is custom,
-              timelines shift, dozens of materials and vendors move at once, and the client is watching it happen
-              in real time. Yet most of this is still managed on WhatsApp, Excel and memory.
-            </p>
-          </Reveal>
-          <Reveal delay={80}>
-            <p>
-              We started Panzo because we kept meeting talented studios and fit-out teams doing world-class
-              work, held back not by their craft but by the chaos behind the scenes. Missed follow-ups. Quote
-              confusion. Procurement surprises. Owners who couldn&apos;t step away without everything slowing down.
-            </p>
-          </Reveal>
-          <Reveal delay={160}>
-            <p className="border-l-4 border-sun pl-5 font-medium text-ink-900">
-              Panzo was the first answer. The same problems run through infrastructure and real estate, at a far
-              bigger scale, and that is where we are going next.
-            </p>
-          </Reveal>
+        <div className="mt-10 grid gap-5 md:grid-cols-2">
+          {NAME_STORY.map((n, i) => (
+            <Reveal key={n.part} delay={i * 100} className="h-full">
+              <div className="h-full rounded-[2rem] border-2 border-line p-8 sm:p-10">
+                <p className={`font-display text-5xl font-bold ${i === 0 ? "text-accent" : "text-ember"}`}>{n.part.toUpperCase()}</p>
+                <p className="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-muted">{n.meaning}</p>
+                <p className="mt-5 text-lg leading-relaxed text-ink-700">{n.body}</p>
+              </div>
+            </Reveal>
+          ))}
         </div>
+        <Reveal delay={150}>
+          <div className="mt-10 max-w-3xl space-y-5 text-lg leading-relaxed text-ink-700">
+            <p>
+              Together, {BRAND} means technology built on strong foundations: systems that are simple to use,
+              scalable by design and built to last. Technology shouldn&apos;t make life more complicated. It should
+              remove complexity, connect people and processes, and help businesses work with clarity and confidence.
+            </p>
+            <p className="border-l-4 border-sun pl-5 font-medium text-ink-900">
+              {BRAND} is the company behind Panzo and the products we will build next. Our ambition is simple: {AMBITION.charAt(0).toLowerCase() + AMBITION.slice(1)}
+            </p>
+          </div>
+        </Reveal>
       </section>
 
       <VisionMission />
+
+      <section className={`${wrap} grid items-center gap-12 py-20 sm:py-28 lg:grid-cols-[1fr_1.4fr]`}>
+        <Reveal className="flex justify-center">
+          <StonesMark animated className="h-60 w-60 sm:h-72 sm:w-72" />
+        </Reveal>
+        <div>
+          <Reveal>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Our mark</p>
+            <h2 className="mt-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">Three stones in balance.</h2>
+            <p className="mt-5 text-lg leading-relaxed text-ink-700">
+              Each stone rests on the one below, because growth only lasts when it is built on strong foundations
+              and smart systems.
+            </p>
+          </Reveal>
+          <ol className="mt-8 space-y-4">
+            {[...LOGO_STORY].reverse().map((l, i) => (
+              <Reveal as="li" key={l.name} delay={i * 90} className="flex items-start gap-4">
+                <span aria-hidden className={`mt-1.5 h-4 w-8 shrink-0 rounded-full ${STONE_FILL[l.colour]}`} />
+                <span>
+                  <span className="block font-display text-xl font-bold">{l.name}</span>
+                  <span className="text-ink-700">{l.body}</span>
+                </span>
+              </Reveal>
+            ))}
+          </ol>
+        </div>
+      </section>
 
       <Marquee />
 
       <section className="bg-surface">
         <div className={`${wrap} py-20 sm:py-28`}>
           <Reveal>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">What we believe</p>
-            <h2 className="mt-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">Four principles.</h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Our core values</p>
+            <h2 className="mt-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">What we stand for.</h2>
           </Reveal>
           <ol className="mt-12 divide-y-2 divide-line border-y-2 border-line">
-            {values.map((v, i) => (
+            {VALUES.map((v, i) => (
               <Reveal as="li" key={v.title} delay={i * 60} className="grid gap-4 py-8 sm:grid-cols-[6rem_1fr_1.4fr] sm:items-baseline">
                 <span className="font-display text-5xl font-bold outline-num">{String(i + 1).padStart(2, "0")}</span>
                 <h3 className="font-display text-2xl font-bold">{v.title}</h3>
@@ -129,68 +131,46 @@ export default function AboutPage() {
 
       <section className={`${wrap} py-20 sm:py-28`}>
         <Reveal>
-          <h2 className="max-w-3xl font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
-            Builders didn&apos;t start their firms to chase payments and dig through folders.
-          </h2>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-700">
-            They started them to build things people are proud of. Somewhere between the site visits, the
-            revisions and the endless follow-ups, the business started running them. We hand that control back.
-          </p>
+          <figure className="max-w-4xl">
+            <blockquote className="font-display text-3xl font-bold leading-snug sm:text-4xl">
+              &ldquo;We started with Panzo because we kept meeting interior businesses held together by memory,
+              WhatsApp threads and a dozen Excel files. The same problem runs through every business that builds,
+              and that is what we are here to <span className="text-accent">fix.</span>&rdquo;
+            </blockquote>
+            <figcaption className="mt-8 flex items-center gap-3">
+              <StonesMark className="h-10 w-10" />
+              <span>
+                <span className="block font-semibold">The {BRAND} Team</span>
+                <span className="block text-sm text-muted">{TAGLINE}</span>
+              </span>
+            </figcaption>
+          </figure>
         </Reveal>
-        <div className="mt-12 grid gap-4 sm:grid-cols-3">
-          {pillars.map((p, i) => (
-            <Reveal key={p.word} delay={i * 100} className="h-full">
-              <div className={`btn h-full rounded-[2rem] p-8 ${PILLAR_STYLES[i]}`}>
-                <p className="font-display text-4xl font-bold tracking-tight">{p.word}</p>
-                <p className="mt-3 leading-relaxed opacity-90">{p.line}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
       </section>
 
       <section className="bg-surface">
         <div className={`${wrap} py-20 sm:py-28`}>
           <Reveal>
-            <figure className="max-w-4xl">
-              <blockquote className="font-display text-3xl font-bold leading-snug sm:text-4xl">
-                &ldquo;We kept meeting interior businesses held together by memory, WhatsApp threads and a dozen
-                Excel files. So we started building the system we wished they had: one place where an enquiry
-                becomes a project, and a project becomes a <span className="text-accent">client for life.</span>&rdquo;
-              </blockquote>
-              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-700">
-                We&apos;re a small team, shipping every week, working closely with the firms we build for.
-              </p>
-              <figcaption className="mt-8 flex items-center gap-3">
-                <StonesMark className="h-10 w-10" />
-                <span>
-                  <span className="block font-semibold">The Stonesyz Team</span>
-                  <span className="block text-sm text-muted">Calmer systems for the built world</span>
-                </span>
-              </figcaption>
-            </figure>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Where we start</p>
+            <h2 className="mt-4 max-w-3xl font-display text-4xl font-bold tracking-tight sm:text-5xl">
+              The built world first.
+            </h2>
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-700">
+              Infrastructure, real estate and interiors share the same problems: many teams, many vendors, money
+              moving at every stage and sites far from the office. We are starting in{" "}
+              {MARKETS.join(", ").replace(/, (?=[^,]*$)/, " and ")}, with Panzo already live for interiors.
+            </p>
+          </Reveal>
+          <Industries />
+          <Reveal delay={200}>
+            <div className="mt-12 flex flex-wrap items-center gap-4">
+              <a href={PANZO_URL} className="btn inline-flex rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-on hover:bg-accent-hover">
+                Visit Panzo &rarr;
+              </a>
+              <span className="text-sm text-muted">{LEGAL_NAME}</span>
+            </div>
           </Reveal>
         </div>
-      </section>
-
-      <section className={`${wrap} py-20 sm:py-28`}>
-        <Reveal>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Where we&apos;re going</p>
-          <h2 className="mt-4 max-w-3xl font-display text-4xl font-bold tracking-tight sm:text-5xl">
-            Infrastructure, real estate and interiors.
-          </h2>
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-700">
-            They share the same problems: many teams, many vendors, money moving at every stage and sites far from
-            the office. We are starting in {MARKETS.join(", ").replace(/, (?=[^,]*$)/, " and ")}, with Panzo
-            already live for interiors.
-          </p>
-        </Reveal>
-        <Industries />
-        <Reveal delay={200}>
-          <a href={PANZO_URL} className="btn mt-12 inline-flex rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-on hover:bg-accent-hover">
-            Visit Panzo &rarr;
-          </a>
-        </Reveal>
       </section>
     </>
   );
