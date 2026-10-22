@@ -3,7 +3,6 @@ import ContactForm from "@/components/ContactForm";
 import { Industries, Problems, VisionMission } from "@/components/Direction";
 import { wrap } from "@/components/Header";
 import { StonesMark } from "@/components/Logo";
-import Marquee from "@/components/Marquee";
 import ProductRow from "@/components/ProductRow";
 import Reveal from "@/components/Reveal";
 import { BRAND, CONTACT_EMAIL, MARKETS, PANZO_URL, PRODUCTS } from "@/components/site";
@@ -60,7 +59,6 @@ export default function Home() {
         </div>
       </section>
 
-      <Marquee />
 
       <VisionMission />
 

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import { wrap } from "@/components/Header";
 import { StonesMark } from "@/components/Logo";
-import Marquee from "@/components/Marquee";
 import { Industries, VisionMission } from "@/components/Direction";
 import { AMBITION, BRAND, LEGAL_NAME, LOGO_STORY, MARKETS, NAME_STORY, PANZO_URL, TAGLINE, VALUES } from "@/components/site";
 
@@ -109,7 +108,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <Marquee />
 
       <section className="bg-surface">
         <div className={`${wrap} py-20 sm:py-28`}>

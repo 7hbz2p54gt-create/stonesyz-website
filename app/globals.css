@@ -98,13 +98,6 @@ body {
   50% { transform: translateY(-10px) rotate(2deg); }
 }
 
-/* Word band that scrolls sideways. */
-.marquee { display: flex; width: max-content; animation: marquee 40s linear infinite; }
-.marquee-wrap:hover .marquee { animation-play-state: paused; }
-@keyframes marquee {
-  to { transform: translateX(-50%); }
-}
-
 /* Scroll reveal. */
 .reveal {
   opacity: 0;
@@ -146,7 +139,7 @@ body {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
-  .text-fire, .sunrise, .stone, .marquee { animation: none; }
+  .text-fire, .sunrise, .stone { animation: none; }
   .tilt, .btn { transition: none; }
   .btn:hover { transform: none; }
 }
