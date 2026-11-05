@@ -24,14 +24,14 @@ export default function PrivacyPage() {
   return (
     <>
       <section className={`${wrap} pb-10 pt-14 sm:pt-20`}>
-        <span className="inline-flex items-center gap-2 rounded-full bg-accent-soft px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+        <span className="text-[1.0625rem] font-medium text-ink-500">
           Legal
         </span>
-        <h1 className="mt-6 font-display text-5xl font-bold leading-[1.02] tracking-tight sm:text-6xl">Privacy Policy</h1>
+        <h1 className="big big-1 mt-4">Privacy Policy</h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-700">
           What we collect through this website, why, and what we will never do with it.
         </p>
-        <p className="mt-4 text-sm text-muted">Last updated {UPDATED}</p>
+        <p className="mt-4 text-sm text-ink-500">Last updated {UPDATED}</p>
       </section>
 
       <article className={`${wrap} legal pb-24`}>

@@ -1,56 +1,34 @@
 @import "tailwindcss";
 
 /**
- * StoneSyz identity: warm red and yellow on cream, deliberately NOT Panzo's
- * crimson + Poppins. Scarlet red is the voice, ember orange and saffron yellow
- * are the warmth, maroon is the deep band colour.
+ * StoneSyz identity (owner 2026-11-05): white ground, near-black ink, light large
+ * type with the second half of a sentence muted, real people at work, and three
+ * stones as the one owned image. Not Panzo's crimson + Poppins. Always light.
  *
- * Token names are theme-aware (flipped in the dark block). Contrast checked:
- * accent on canvas ~4.7:1, white on accent ~5:1, sun on maroon ~9.8:1.
- * `sun` and `ember` are DECORATION or text on maroon only, never text on cream.
+ * `muted` (#86868b) is only for large type. Small text uses `ink-500` (about 5:1 on white).
+ * `ember` and `sun` are stone colours, never text.
  */
 @theme {
-  --color-canvas: #fff8ee;
-  --color-surface: #fdeedb;
-  --color-ink-900: #24100b;
-  --color-ink-700: #5a3a2e;
-  --color-muted: #8a6a5c;
-  --color-line: #f0dcc4;
+  --color-canvas: #ffffff;
+  --color-surface: #f5f5f7;
+  --color-ink-900: #1d1d1f;
+  --color-ink-700: #515154;
+  --color-ink-500: #6e6e73;
+  --color-muted: #86868b;
+  --color-line: #e8e8ed;
+  --color-line-2: #dedee3;
 
   --color-accent: #d7261e;
   --color-accent-hover: #b51d16;
-  --color-accent-on: #ffffff;
-  --color-accent-soft: #ffe3cc;
-
   --color-ember: #f2701c;
   --color-sun: #ffb703;
-  --color-maroon: #4a0d10;
-  --color-maroon-2: #6b1416;
-  --color-on-maroon: #fff1e2;
 
-  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-canvas: #170a07;
-    --color-surface: #23110c;
-    --color-ink-900: #fff1e2;
-    --color-ink-700: #e8cdbb;
-    --color-muted: #b8978a;
-    --color-line: #3b1f17;
-    --color-accent: #ff6a4d;
-    --color-accent-hover: #ff8a70;
-    --color-accent-on: #170a07;
-    --color-accent-soft: #3a1710;
-    --color-maroon: #2a0809;
-    --color-maroon-2: #3f0d0f;
-  }
+  --font-sans: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
 }
 
 html {
-  color-scheme: light dark;
+  color-scheme: light;
   scroll-behavior: smooth;
 }
 body {
@@ -58,98 +36,53 @@ body {
   color: var(--color-ink-900);
 }
 :focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-ink-900);
   outline-offset: 3px;
 }
 
-.text-fire {
-  background: linear-gradient(100deg, var(--color-accent) 0%, var(--color-ember) 45%, var(--color-sun) 100%);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: fire 7s ease-in-out infinite alternate;
+/* The big sentence: light weight, tight, second half muted with .m */
+.big {
+  font-weight: 300;
+  letter-spacing: -0.028em;
+  line-height: 1.06;
+  text-wrap: pretty;
 }
-@keyframes fire {
-  to { background-position: 100% center; }
-}
+.big .m { color: var(--color-muted); }
+.big-1 { font-size: clamp(2.75rem, 4.7vw, 4.25rem); }
+.big-2 { font-size: clamp(2.375rem, 4.6vw, 4rem); }
+.big-3 { font-size: clamp(2.375rem, 4vw, 3.5rem); }
 
-/* Hero: a slow sunrise behind the type. */
-.sunrise {
-  position: absolute;
+.btn {
+  display: inline-block;
   border-radius: 9999px;
-  pointer-events: none;
-  background: radial-gradient(circle at 50% 50%, var(--color-sun) 0%, var(--color-ember) 38%, var(--color-accent) 62%, transparent 72%);
-  opacity: 0.22;
-  filter: blur(10px);
-  animation: rise 14s ease-in-out infinite alternate;
+  background: var(--color-ink-900);
+  color: #fff;
+  font-weight: 500;
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s;
 }
-@keyframes rise {
-  from { transform: translateY(20px) scale(0.96); }
-  to { transform: translateY(-20px) scale(1.04); }
-}
-
-/* Stacked stones: each floats on its own beat. */
-.stone { animation: float 6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
-.stone-2 { animation-delay: -2s; animation-duration: 7s; }
-.stone-3 { animation-delay: -4s; animation-duration: 8s; }
-@keyframes float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-10px) rotate(2deg); }
-}
+.btn:hover { transform: translateY(-1px); background: #000; }
 
 /* Scroll reveal. */
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateY(20px);
   transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .reveal-in { opacity: 1; transform: none; }
 
-/* Product rows: the screenshot sits tilted on a warm slab and squares up on hover. */
-.slab {
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-ember) 55%, var(--color-sun) 100%);
-}
-.tilt {
-  transform: perspective(1200px) rotateY(-8deg) rotateX(4deg) rotate(-2deg);
-  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.7s;
-  box-shadow: 0 30px 60px -25px rgb(36 16 11 / 0.55);
-}
-.tilt-rev { transform: perspective(1200px) rotateY(8deg) rotateX(4deg) rotate(2deg); }
-.product-row:hover .tilt,
-.product-row:focus-within .tilt {
-  transform: perspective(1200px) rotateY(0) rotateX(0) rotate(0) translateY(-6px);
-  box-shadow: 0 40px 70px -25px rgb(36 16 11 / 0.6);
-}
-
-.btn {
-  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s, color 0.15s, border-color 0.15s;
-}
-.btn:hover { transform: translateY(-2px); }
-
-.font-display {
-  letter-spacing: -0.02em;
-}
-
-.outline-num {
-  -webkit-text-stroke: 1.5px var(--color-accent);
-  color: transparent;
-}
-
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
-  .text-fire, .sunrise, .stone { animation: none; }
-  .tilt, .btn { transition: none; }
+  .btn { transition: none; }
   .btn:hover { transform: none; }
 }
 
 /* Legal pages: readable long-form text. */
 .legal section { max-width: 46rem; }
 .legal section + section { margin-top: 2.5rem; }
-.legal h2 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; }
+.legal h2 { font-size: 1.5rem; font-weight: 500; letter-spacing: -0.02em; }
 .legal h3 { margin-top: 1.25rem; font-weight: 600; }
 .legal p, .legal li { margin-top: 0.75rem; font-size: 1.0625rem; line-height: 1.75; color: var(--color-ink-700); }
 .legal ul { list-style: disc; padding-left: 1.25rem; }
-.legal a { color: var(--color-accent); text-decoration: underline; text-underline-offset: 3px; }
+.legal a { color: var(--color-ink-900); text-decoration: underline; text-underline-offset: 3px; }
 .legal a:hover { color: var(--color-accent-hover); }
