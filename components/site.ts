@@ -5,43 +5,47 @@ export const CONTACT_EMAIL = "hello@stonesyz.com";
 export const PANZO_URL = "https://thepanzo.com";
 
 /**
- * Panzo products, described from what ships today (panzo-website copy).
- * Screenshots are the same demo-data images published on thepanzo.com.
+ * Panzo, by the kind of business it serves. Only claim what ships today.
+ * Software and real estate are Panzo Business Models; real estate lists batch 1 only
+ * (no cost sheet, booking or demands until they are built).
  * Panzo People is offered in the UAE and Singapore only.
  */
-export const PRODUCTS = [
+export const PANZO_FOR = [
   {
-    name: "Panzo Studio",
-    tag: "Web workspace",
-    body: "Runs an interior or fit-out business end to end: leads, deals, projects, handover and aftercare, in one place for the office team.",
-    href: "https://thepanzo.com/product",
-    image: "/product/studio.webp",
-    width: 1600,
-    height: 1000,
-    alt: "Panzo Studio management dashboard with projects, pipeline, receivables and cash flow",
-    phone: false,
+    audience: "For interior and fit-out firms",
+    headline: "Leads, sites, purchases and money, together.",
+    image: "/img/engineers-site.jpg",
+    alt: "Two engineers in hard hats checking a tablet on site",
+    position: "30% 45%",
+    items: [
+      { name: "Panzo Studio", body: "Runs the work from first enquiry to handover and service" },
+      { name: "Panzo Mobile", body: "Keeps the team on site connected from the phone" },
+      { name: "Panzo People", body: "Attendance, leave and team records, in the UAE and Singapore" },
+    ],
   },
   {
-    name: "Panzo Mobile",
-    tag: "iOS and Android",
-    body: "The field companion for site and crew: daily site reports, tasks, snags with photos and videos, tickets and expense claims.",
-    href: "https://thepanzo.com/mobile",
-    image: "/product/mobile.webp",
-    width: 600,
-    height: 1298,
-    alt: "Panzo Mobile My Day screen with attendance, tasks due and today's meetings",
-    phone: true,
+    audience: "For software companies",
+    headline: "Customers, subscriptions and billing, all tracked.",
+    image: "/img/focused-laptop.jpg",
+    alt: "A person working on a laptop",
+    position: "50% 40%",
+    items: [
+      { name: "Accounts", body: "Every customer and subscription in one list" },
+      { name: "Billing", body: "GST invoices, monthly, quarterly or yearly" },
+      { name: "Spending", body: "Expenses and vendors, so you see what goes out" },
+    ],
   },
   {
-    name: "Panzo People",
-    tag: "HR and payroll",
-    body: "Attendance, leave and payroll for the same teams, on the same login. Available in the UAE and Singapore.",
-    href: "https://thepanzo.com/people",
-    image: "/product/people.webp",
-    width: 1600,
-    height: 1000,
-    alt: "Panzo People HR dashboard with attendance trend and today's attendance",
-    phone: false,
+    audience: "For real estate builders",
+    headline: "Every flat, villa and plot, at a glance.",
+    image: "/img/property-visit.jpg",
+    alt: "A property visit in a new home",
+    position: "50% 55%",
+    items: [
+      { name: "Units", body: "Every unit and its status, in one live grid" },
+      { name: "Plans", body: "Master plan, building and floor views, coloured by status" },
+      { name: "Holds", body: "Block a unit for a buyer, and it frees itself when time is up" },
+    ],
   },
 ] as const;
 
@@ -49,17 +53,16 @@ export const MARKETS = ["India", "United Arab Emirates", "Singapore"] as const;
 
 export const NAV = [
   { label: "About", href: "/about" },
-  { label: "Ventures", href: "/#ventures" },
+  { label: "What we make", href: "/#what-we-make" },
   { label: "Contact", href: "/#contact" },
 ] as const;
 
 /*
  * Brand (owner 2026-10-22): the brand is written "StoneSyz"; the legal name stays
  * exactly "Stonesyz Private Limited". STONE = strong foundations, SYZ = systems.
- * Tagline: "Strong Foundations. Smart Systems." The brand is broad (technology for
- * businesses); the built world (infrastructure, real estate, interiors) is where we
- * start. Only interiors has a live product (Panzo): never name unbuilt products or
- * give dates. Vision and mission are kept short and easy to say.
+ * Tagline: "Strong Foundations. Smart Systems."
+ * Positioning (owner 2026-11-05): a technology company solving different problems
+ * for different businesses. Never name unbuilt products or give dates.
  */
 export const BRAND = "StoneSyz";
 export const TAGLINE = "Strong Foundations. Smart Systems.";
@@ -92,47 +95,7 @@ export const VALUES = [
 
 /** Logo story: the three stones, bottom to top. A brand narrative, not a literal reading of the shapes. */
 export const LOGO_STORY = [
-  { name: "Foundation", colour: "accent", body: "The strength and reliability everything is built on." },
-  { name: "Systems", colour: "ember", body: "The technology and processes that connect operations." },
-  { name: "Growth", colour: "sun", body: "The progress and possibilities those systems make possible." },
-] as const;
-
-export const PROBLEMS = [
-  {
-    title: "Projects slip, and nobody sees it in time",
-    body: "Delays and overruns usually surface after the cost is already locked in, because progress lives in site visits, calls and chat groups instead of one live picture.",
-  },
-  {
-    title: "Cash gets stuck between stages",
-    body: "Milestone billing, retentions, advances and vendor payments are tracked in spreadsheets, so money that is owed waits and money that is spent goes unchecked.",
-  },
-  {
-    title: "Every party holds its own version",
-    body: "Owners, developers, contractors, consultants, vendors and buyers each keep separate records. Decisions get lost between them, and disputes start there.",
-  },
-  {
-    title: "Handover comes without a record",
-    body: "Keys change hands without a trusted history of what was built, with which materials, by whom and with which warranties, so problems come back with no trail.",
-  },
-] as const;
-
-export const INDUSTRIES = [
-  {
-    name: "Infrastructure",
-    status: "Where we're heading",
-    live: false,
-    body: "For the contractors, subcontractors and vendors who deliver infrastructure projects, and need clear site progress, billing and payments without enterprise complexity.",
-  },
-  {
-    name: "Real estate",
-    status: "Where we're heading",
-    live: false,
-    body: "From launch to possession and beyond: developers, sales teams, contractors and buyers who deserve the same clear view of every unit and every payment.",
-  },
-  {
-    name: "Interiors",
-    status: "Live today: Panzo",
-    live: true,
-    body: "Design, quotations, procurement, site work, handover and service for interior and fit-out firms, in one platform that is already running.",
-  },
+  { name: "Foundation", image: "/img/red.png", body: "The strength and reliability everything is built on." },
+  { name: "Systems", image: "/img/orange.png", body: "The technology and processes that connect operations." },
+  { name: "Growth", image: "/img/yellow.png", body: "The progress and possibilities those systems make possible." },
 ] as const;
