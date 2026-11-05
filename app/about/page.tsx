@@ -5,7 +5,7 @@ import Reveal from "@/components/Reveal";
 import { AMBITION, BRAND, LEGAL_NAME, LOGO_STORY, MARKETS, MISSION, NAME_STORY, PANZO_URL, TAGLINE, VALUES, VISION } from "@/components/site";
 
 export const metadata: Metadata = {
-  title: `About | ${BRAND}`,
+  title: `About ${BRAND} | The Company Behind Panzo`,
   description: `The story behind ${BRAND}: strong foundations and smart systems. A technology company, and the company behind Panzo.`,
   alternates: { canonical: "/about" },
 };
